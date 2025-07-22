@@ -10,17 +10,17 @@ Run a MySQL Databaase using Docker
   docker compose up
 ```
 
-Make a .env file from .env.example and generate encryption key
+Make a .env file from .env.example
 
 ```bash
   cp .env.example .env
-  php artisan key:generate
 ```
 
-Install dependencies and create the Event Management database
+Install dependencies, generate encryption key and create the Event Management database
 
 ```bash
   composer install
+  php artisan key:generate
   php artisan migrate --seed
 ```
 
