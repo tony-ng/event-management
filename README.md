@@ -4,13 +4,24 @@ This is a personal project in which users can create, update and delete the even
 
 ## Run Locally
 
-Make a .env file from .env.example
+Run a MySQL Databaase using Docker
+
+```bash
+  docker compose up
+```
+
+Make a .env file from .env.example and generate encryption key
+
+```bash
+  cp .env.example .env
+  php artisan key:generate
+```
 
 Install dependencies and create the Event Management database
 
 ```bash
   composer install
-  php artisan migrate
+  php artisan migrate --seed
 ```
 
 Start the local server
